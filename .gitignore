@@ -4,4 +4,6 @@ __pycache__
 *.env
 static_cdn/
 local_settings.txt
-*db.sqlite3
+*.sqlite3
+htmlcov/
+.coverage
