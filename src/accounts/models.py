@@ -9,8 +9,9 @@ from common.models import AbstractTimeStamp
 class Organization(AbstractTimeStamp):
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
+    slug = models.SlugField(unique=True)
     domain = models.CharField(max_length=100)
-    countries = CountryField(multiple=True)
+    countries = CountryField(multiple=True, blank=True)
     parent = models.ForeignKey(
         'self', verbose_name=_('Parent Organization'),
         blank=True, null=True, on_delete=models.CASCADE
