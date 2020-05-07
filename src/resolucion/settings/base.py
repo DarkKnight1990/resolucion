@@ -21,12 +21,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+THIRD_PARTY_APPS = [
+]
+
 LOCAL_APPS = [
     'accounts.apps.AccountsConfig',
     'common.apps.CommonConfig',
+    'django_countries',
 ]
 
-INSTALLED_APPS += LOCAL_APPS
+INSTALLED_APPS += THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
