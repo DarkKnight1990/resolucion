@@ -100,3 +100,6 @@ STATICFILES_DIRS = [
 # Media file settings
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')
+
+# Custom User
+AUTH_USER_MODEL = 'accounts.CustomUser'
