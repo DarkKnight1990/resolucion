@@ -11,7 +11,9 @@ from common.models import AbstractTimeStamp
 
 
 class Organization(AbstractTimeStamp):
-    name = models.CharField(max_length=255)
+    name = models.CharField(
+        verbose_name=_('Organization Name'), max_length=255
+    )
     description = models.TextField(blank=True, null=True)
     slug = models.SlugField(unique=True)
     domain = models.CharField(max_length=100)
@@ -89,7 +91,7 @@ class UserProfile(AbstractTimeStamp):
     )
 
     def __str__(self):
-        return self.user
+        return self.user.email
 
     class Meta:
         verbose_name = _('user profile')
