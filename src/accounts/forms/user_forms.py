@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import (
-    ReadOnlyPasswordHashField
+    AuthenticationForm, ReadOnlyPasswordHashField
 )
 from django.utils.translation import ugettext as _
 
@@ -64,3 +64,8 @@ class CustomUserChangeForm(forms.ModelForm):
 
     def clean_password(self):
         return self.initial['password']
+
+
+class UserLoginForm(AuthenticationForm):
+    # simply passing it without customizing
+    pass
