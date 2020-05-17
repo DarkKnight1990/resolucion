@@ -16,6 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from accounts.views import OrganizationCreateView, home, UserLoginView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path(r'create-organization/', OrganizationCreateView.as_view()),
+    path(r'login/', UserLoginView.as_view(), name='user-login'),
+    path(r'', home, name='home')
 ]
