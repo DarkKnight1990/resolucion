@@ -7,3 +7,4 @@ local_settings.txt
 *.sqlite3
 htmlcov/
 .coverage
+.vscode/
